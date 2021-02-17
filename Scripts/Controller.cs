@@ -33,10 +33,10 @@ public class Controller : MonoBehaviour
     {
         coalText.text = $"Coal: {Methods.NotationMethod(data.coal, data.coal <= 999 ? "F0" : "F2")}";
 
-        mineCoalText.text = "Mine " + data.mineCoal.ToString("F0") + " Coal";
+        mineCoalText.text = $"Mine {Methods.NotationMethod(data.mineCoal, y:"F2")} Coal";
 
-        ironText.text = "Iron: " + data.iron.ToString("F0");
-        mineIronText.text = "Mine " + data.mineIron.ToString("F0") + " Iron\nOre: " + data.ironOre;
+        ironText.text = $"Iron: {Methods.NotationMethod(data.iron, y:"F2")}";
+        mineIronText.text = $"Mine {Methods.NotationMethod(data.mineIron, y:"F2")} Iron\nOre: {Methods.NotationMethod(data.ironOre, y:"F2")}";
     }
 
     public void MineCoal()
