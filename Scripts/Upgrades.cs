@@ -19,8 +19,8 @@ public class Upgrades : MonoBehaviour
             control.MeltIronPanel.SetActive(true);
             control.IronTextObject.SetActive(true);
         }
-        control.pickaxeLevelText.text = "Level: " + control.data.pickaxeUpgradeLevel;
-        control.pickaxeCostText.text = "Cost: " + control.data.pickaxeUpgradeCost.ToString("F0") + " Coal";
+        control.pickaxeLevelText.text = $"Level: {Methods.NotationMethod(control.data.pickaxeUpgradeLevel, y:"F2")}";
+        control.pickaxeCostText.text = $"Cost: {Methods.NotationMethod(control.data.pickaxeUpgradeCost, y:"F2")} Coal";
     }
 
     public void MeltIron()
@@ -31,6 +31,6 @@ public class Upgrades : MonoBehaviour
             control.data.iron += 1;
             control.data.ironOre -= 1;
         }
-        control.meltIronCostText.text = "Uses " + control.data.meltIronCost.ToString("F0") + " Coal";
+        control.meltIronCostText.text = $"Uses {Methods.NotationMethod(control.data.meltIronCost, y:"F2")} Coal";
     }
 }
